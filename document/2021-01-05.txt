@@ -1,7 +1,184 @@
-*****************************GIT AND GITHUB***************************************
+*****************************  GIT  ***************************************
+1.REPOSITORY
+    A git repository is a container for a project that is tracked by git.
+
+    Two major type of git repository:
+     1.Local Repository- An isolated repository stored on your computer where you can work on the local version of your project.
+     2.Remote Repository- generally stored outside of your isolated local system usually a remote server.
+
+2.INITIALIZING A REPOSITORY
+    we use a command
+     
+     "git init"
+
+    This will generate a hiddden .git directory for your project where git store all internal tracking data for the current repository.
+
+3.STAGING AND COMMITING CODE
+
+    Commiting is the process in which the changes are "officialy" added to the git repository.
+
+    Note:before we commit our code,we need to place it inside the stagging area.
+
+    3.1:CHECKING THE STATUS
+
+        git status
+    
+    3.2:STAGING FILES
+
+        From the project folder,we can use git add command to add our files to the stagging area,which allow them to be tracked.
+
+            git add navneet.js
+        
+        To add multiple files,
+
+            git add index.js main.js app.js
+        
+        You can add all the files in a single command
+           
+           git add .
+        
+    3.3:MAKING COMMITS
+        To commit the files from the staging are we use the command:
+
+            git commit -m "commit messgae"
+    
+    3.4:COMMIT HISTORY
+        To see all the commits that were made for our project,you can use the following command.
+
+            git log
+        
+        To get the last 5 commit history you can write:
+          
+           git log -5
+
+        NOTE:To exist git log,type "q"
+    
+        To go back to previous state of your project code that you committed, you can use the following command:
+
+            git checkout <commit-hash>
+        
+        To go back to latest commit.
+
+            git ceckout master.
+
+4.BRANCHES
+
+    A branch can be interpretd as an individual timeline of our project commits.
+
+    When we initialize a repository and start making ommits,they are saved to the master branch by default
+
+    4.1:CREATING A NEW BRANCH
+
+        git branch <new-branch-name>
+
+    4.2:CHANGING BRANCHES
+        To switch to different branch,youuse the git checkout command
+
+            git checkout <branh-name>
+    
+        To create a new branch and change to it at the same time,you can use the -b flag.
+
+            git checkout -b <branch-name>
+    
+    4.3:MERGING BRANCHES
+
+            git merge <branch_name>
+
+    4.4:DELETING A BRANCH
+
+            git branch -d <branch_name>
+
+5.CHANGES MADE
+    We can see the changes that user have done in a paricular file before COMMITING by using the command:
+
+     git diff <file-name>
 
 
+    We can also seethe changes using the commit hash code using the command
 
-
+        git show <commit-hash>
 
 ***********************************************************************************
+******************************** GENERATE SSH KEY *********************************
+
+SSH- SECURE SHELL HASH
+       -used for authentication
+       -By setting ssh key you can connect to Gitlab server without using username and password each time
+
+       Open gitbash command and write the command to get your ssh key
+
+            $ ssh-keygen
+
+        You can also write in this way also:
+
+            $ sssh-keygen -t rsa -b 4096 -C "username or email"
+
+            here "-t" flags stand for the type
+                 "-b" flags stand for number of bytes
+                 "-C" flags stand for label that we want to create keygen with
+
+        Example: $ssh-keygen -t rsa -b 4096 -C "navneet@gmail.com"
+
+        NOW,your key is generated in the corresponding folder copy it and goes to your github account and then go
+        to setting and the go to SSH and GPG keys and paste your key and then click on submit.
+
+*************************************************************************************
+***********************************GITHUB********************************************
+
+1.WHAT IS GITHUB?
+        Github is the hosting platform for git repositories.
+
+        DIFFERENCE BETWEEN GIT ANF=D GITHUB.
+
+        Git is the version control system,the tools that tracks changes to our files over time.
+        Github is hosting service for project that use git.
+
+2.CREATING A GITHUB REPOSITORY
+
+    To create a new git repository go to github.com and on the right hand side click the + symbol then click on create repository.
+
+    You can set your repository to be PUBLIC or PRIVATE.
+    PUBLIC: it means nayone can see the new repository.
+    PRIVATE: you can manuaaly choose who can access the new repository.
+
+    After you set your repository then you have to push your code:
+    
+    2.1:PUSHING YOUR CODE TO THE GITHUB REPOSITORY
+
+      COMMON/WORKFLOW:
+         1.Commit your code locally
+         2.Go to github and make a new repositoy
+         3.Connect you local repo to the githuib repo(add a remote)
+         4.Push your code upto github using the new remote
+
+        To push an exisiting repo:
+          git remote add origin <url>
+          git push -u origin master
+
+     NOTE:
+             git remote                 "Will tell you the remote name"
+             git remote -v              "This will list all the remote that i have"
+
+        If you don't have any remote then you can add the remote using the command
+
+           git remote add origin <url>
+
+        You don't have to name the remote "origin" but is standard if you only have a single remote
+
+        Now if you want to push your code to github as your remote is added you use command:
+
+            git push -u origin master
+        
+        here "-u" flag is only necessary for the first time you push(even then it's not technicaly necessary,it just make your life little easier)
+             "origin" is the remote name
+             "master" is the branchname that you want to push you can write your branch name here.
+
+3.CLONING AN EXISITING REPOSITORY
+
+        git clone <url>
+
+4.PULL CHANGES FROM GITHUB
+
+        git pull origin master        
+
+**************************************************************************************
