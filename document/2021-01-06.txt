@@ -141,6 +141,20 @@ If you want to perform add and commit in one command you use the command:
     git commit -a :- It's job is to commit all the changes that are staged.
     git commit -m :- It's job is to specify the commit message when you're making a commit.
 
+HOW TO DELETE THE BRANCH FROM GITHUB USING GIT?
+
+        git push -d origin <branch-name>
+
+HOW TO SEE THE DIFFERENCE BETWEEN WORKING AREA AND STAGED AREA?
+
+        $git diff
+        It will show you the difference between the working code and staged area.
+
+HOW TO SEE THE DIFFERENCE BETWEEN WORKING AREA AND PREVIOUS COMMIT?
+    
+        $ git diff --staged
+
+
 ********************************************HOW TO UNDO UNCOMMITTED AND COMMITED CHANGE*****************************************
 
 To undo uncommited change you can use the command:
