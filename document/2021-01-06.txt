@@ -123,12 +123,12 @@ If you are deleting the branch that are not merged using the command below you w
 
     $git branch -d "branchname"
 
-    so delete it write "D" onstaead of "d"
+    so delte it write "D" onstaead of "d"
 
     $ git branch -D <branchname>
 
 ****************************************************************************************************************
-*********************************************USEFUL COMMAND*********************************************************
+****************************************USEFUL COMMAND*********************************************************
 
 If you want your git repository to be a normaol repoitory again then you can use the command :
 
