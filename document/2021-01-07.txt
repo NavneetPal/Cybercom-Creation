@@ -1,0 +1,179 @@
+***************************GIT REVERT*********************************************************************************************************************
+
+In Git, the term revert is used to revert some changes. The git revert command is used to
+apply revert operation. It is an undo type command. However, it is not a traditional undo alternative. 
+It does not delete any data in this process; instead, it will create a new change with the opposite effect 
+and thereby undo the specified commit. Generally, git revert is a commit.
+
+
+1.GIT REVERT TO PREVIOUS COMMIT
+    Revert comman basic syntax is:
+
+            $git revert <commithash>
+        
+    But you can write it in three diiferent ways:
+        
+        $git revert <commithash>
+        This willl automatically genrate a commit message saying Revert <commit message that you want to undo>
+
+        $git revert -e <commithash>
+        here -e means edit the revert commit message
+        This will allow you to change the revrt commit message
+
+        $git revert -n <commithash>
+        here -n means no-commit
+        In this case commit will not happen but the revert has been occured now its your responsibility to commit the message.
+
+2.GIT REVERT MERGE
+In Git, merging is also a commit that has at least two parents. It connects branches and code to create a complete project.
+
+A merge in Git is a commit that has at least two parents. It brings together multiple lines of development. In a work-flow where
+features are developed in branches and then merged into a mainline, the merge commits would typically have two parents.
+
+
+HOW TO REVERT A MERGE
+
+    $ git log
+
+    $git revert <commithash> -m 1
+
+    The above command will revert the merging operation. Here, -m 1 is used for the first parent as the mainline. Merge commit 
+    has multiple parents. The revert needs additional information to decide which parent of the merge shall be considered as the
+     mainline. In such cases, the parameter -m is used.
+
+*****************************************************************************************************************************************************
+*************************************************GIT REBASE******************************************************************************************
+
+Rebasing is a process to reapply commits on top of another base trip. It is used to apply a sequence of commits from distinct
+branches into a final commit. It is an alternative of git merge command. It is a linear process of merging.
+
+ Rebasing can be done when you want your branch commit to push over the commit of your master branch.
+
+ Whwn you merge your feature branch to the master branch all the commit of your feature branch get also added to the master branch and on the top of that merge
+ commit also get generated.
+
+ But this is not the case with git rebase it simply add the feature commit on th etop of the master commit ,and your main branch is linear and
+ therefore confusion decreases for the developer
+
+ To implement it:
+ Create a another branch
+    $ git checkout -b feature
+ 
+ and then do some commit in the feature branch like
+
+        $git add index.html
+        $git commit -m "index.html added"
+        $git add style.css
+        $git commit -m "stylesheet added"
+ 
+ and then you go the master branch 
+
+        $git checkout master
+
+ and then rebase the feature branch commit
+
+        $ git rebase feature
+
+
+*************************************************************************************************************************************************************
+****************************************GIT STASH************************************************************************************************************
+
+Sometimes you want to switch the branches, but you are working on an incomplete part of your current project. You don't want to make a commit of half-done work.'
+Git stashing allows you to do so. The git stash command enables you to switch branches without committing the current branch.
+
+let suppose you are working with your branch and you want  to checkout to another branch without commiting then wre use GIT STASH command
+
+You can stash the file by using the command:
+
+    $git stash 
+
+    By doing this now you don't have to commit your file all the changes are stored in stash area you willn't see it
+
+    You can check all the stash done in your repo:
+
+    $ git stash list
+
+    You will get all the stash with their id as  stash@{0},stash@{1}
+
+Now if you want to commit your all changes that you have moved to stash then you can use the command :
+
+    $git stash apply
+
+    $ git stash apply <stash id>
+
+GIT STASH CHANGES
+
+        $git stash show
+
+        $git stash show -p
+
+If you want to remove all the stash from stash list you can use the command:
+
+        $git stash clear
+
+*****GIT STASH POP*******
+
+Git allows the user to re-apply the previous commits by using git stash pop command. The popping option removes the changes from stash and applies them to your working file.
+
+The git stash pop command is quite similar to git stash apply. The main difference between both of these commands is stash pop command that deletes the stash from the stack after it is applied.
+
+  If you want to add your stash to the working code then you can pop the stash and it will get removed from stash list
+
+  $git stash pop
+
+******GIT STASH DROP*********
+
+The git stash drop command is used to delete a stash from the queue. Generally, it deletes the most recent stash. Caution should be taken before using stash drop command, as it is difficult to undo if once applied.
+
+    $git stash drop
+
+    $git stash drop <stash id>
+
+****************************************************************************************************************************************************************************************************************************************
+*******************************************GIT HEAD*************************************************************************************************************************************************************************************
+
+The HEAD points out the last commit in the current checkout branch. It is like a pointer to any reference.
+The HEAD can be understood as the "current branch." When you switch branches with 'checkout,' the HEAD is transferred to the new branch.
+
+    $ git show HEAD
+
+******************************************************************************************************************************************************************************************************************************************
+*****************************************GIT LOG DEEP DOWN*********************************************************************************************************************************************************************************
+
+If you want commit history:
+
+     $ git log
+
+if you want all the commit with their changes
+
+    $ git log -p
+
+If you want the precise information:
+
+    $ git log --stat
+
+    $ git log --oneline
+
+    $ git log --pretty=oneline
+
+    $git log --pretty=short
+
+    $git log --pretty=full
+
+    $git log --since 2.day
+    $git log --since 2.weeks
+    $git log --since 2.months
+    $git log --since 2.year
+    
+    $git log --pretty=format:"%h -- %an"
+
+    here %h-hashcode and %an-author name
+If you want to save your change in the same commit what you have to do is:
+    $git commit --amend
+
+To get out of Vim editor press 'esc' key and the write ':wq' and then press 'enter'
+
+
+**************************************************************************************************************************************************************************************************************************************************
+
+
