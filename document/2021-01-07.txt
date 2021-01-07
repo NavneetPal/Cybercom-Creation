@@ -175,5 +175,40 @@ To get out of Vim editor press 'esc' key and the write ':wq' and then press 'ent
 
 
 **************************************************************************************************************************************************************************************************************************************************
+************************************************************GIT SQUASH*****************************************************************************************************************************************************************************
+In Git, the term squash is used to squash the previous commits into one. It is not a command; instead, it is a keyword. The squash is an excellent technique for group-specific changes before forwarding them to others.
+You can merge several commits into a single commit with the compelling interactive rebase command.
+
+
+For squashing your commit message to one message you follow these command in the fashion shown below:
+ 1.choose the number of commit to squash:
+    $git rebase -i HEAD~3
+
+    This will open vim editor press 'i' to go into insert mode and then change "pick" with "squash" only you have to change all except the first pick otherwise you will get error.
+
+ 2.Again vimeditor will open now write this symbol in front of those commit that you dont't want "#" and you can write your commit here also
+   and then pres "esc"and then ":wq"
+
+ 3.Now all your commit will get squash you chan check this by using command:
+    git log --oneline
+
+******************************************************************************************************************************************************************************************************************************************************
+************************************************************GIT CHERRY PICK***************************************************************************************************************************************************************************
+
+Cherry-picking in Git stands for applying some commit from one branch into another branch. In case you made a mistake and committed a change into the wrong branch, but do not want to merge the whole branch. 
+You can revert the commit and apply it on another branch.
+
+
+Basically in cherry picking what you do you don't  merge the whole branch but take the part of the code from the branch you want by taking the commit hash.
+
+You want the chenges into the master branch that's why you should be in master branch first:
+
+    $git checkout master
+
+    $git cherry-pick <commit id>
+
+And all the changes will be in your master branch
+
+******************************************************************************************************************************************************************************************************************************************************
 
 
