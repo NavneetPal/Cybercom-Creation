@@ -221,6 +221,13 @@ For renaming the file
 The below command will list the branches on the local and remote repository.
     $git branch -a
 
+To set upstream for the git push you can use the command:
+
+        $ git push --set-upstream origin master
+
+    Now you can easily do git push by using command:
+        $git push
+
 ********************************************************************************************************************************************************************************************************************************************************
 
 
