@@ -218,6 +218,9 @@ For deleting the file
 For renaming the file
     $git mv first.txt first_renamed.txt
 
+The below command will list the branches on the local and remote repository.
+    $git branch -a
+
 ********************************************************************************************************************************************************************************************************************************************************
 
 
