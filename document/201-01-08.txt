@@ -1,0 +1,127 @@
+**************************NOTE: You will get all the code in the coding folder with the same name  of the current file.Here short summary of what is done in the coding section.******************************
+
+1.What is type coercion in Javascript?
+
+The process that Javascript automatically 
+converts types of Variables to another type when it is needed.
+
+2.What is a variable mutation in Javascript?
+Javascript allows changing the value of a variable anywhere in the program.
+We can define the multiple variables in the same line and values can be assigned later. 
+The Values of the Variables can be redefined.
+
+
+JavaScript Arithmetic Operators
+Arithmetic operators are used to perform arithmetic on numbers:
++	Addition
+-	Subtraction
+*	Multiplication
+**	Exponentiation (ES2016)
+/	Division
+%	Modulus (Division Remainder)
+++	Increment
+--	Decrement
+
+
+JS CODING CHALLENGE 1:
+
+        let markMass=40;
+        let johnMass=50;
+
+        let johnHeight=6;
+        let markHeight=5;
+
+        let isMarkHigherBmi= markMass/(markHeight**2) >johnMass/(johnHeight**2);
+
+        console.log(`Is Marks BMI higher than Johns ? ${isMarkHigherBmi}`);
+
+JS CODING CHALLENGE 2:
+
+            let johnScore=[89,95,103];
+            let mikeScore=[89,95,103];
+            let maryScore=[89,97,103];
+
+            let johnAverage,mikeAverage,maryAverage;
+
+            johnAverage=(johnScore[0]+johnScore[1]+johnScore[2])/3;
+            mikeAverage=(mikeScore[0]+mikeScore[1]+mikeScore[2])/3;
+            maryAverage=(maryScore[0]+maryScore[1]+maryScore[2])/3;
+
+            if(johnAverage>mikeAverage && johnAverage>maryAverage)
+            console.log(`John wins the match and the average score is: ${johnAverage}`);
+            else if(mikeAverage>johnAverage && mikeAverage>maryAverage)
+            console.log(`Mike wins the match and the average score is: ${mikeAverage}`);
+            else if(maryAverage>johnAverage && maryAverage>mikeAverage)
+            console.log(`Mary wins the match and the average score is: ${maryAverage}`);
+            else
+            console.log(`Either any two avgScore or all the three avgScore are equal`);
+
+
+
+ HTML PRACTICE 1: (Actual implementation is in practice folder)
+
+    ||Index.html||
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <div id="card-deck">
+                <div class="card" style="width:215px">
+                    <img src="img/img1.jpg"  style="width:100%;height:315px">
+                    <div class="container">
+                    <h4><b>Navneet Pal</b></h4>
+                    </div>
+                </div>
+
+                <div class="card" style="width:215px">
+                    <img src="img/img2.jpg"  style="width:100%;height:315px">
+                    <div class="container">
+                    <h4><b>Abhishek Mishra</b></h4>  
+                    </div>
+                </div>
+
+                <div class="card" style="width:215px;">
+                    <img src="img/img3.jpg"  style="width:100%;height:315px">
+                    <div class="container">
+                    <h4><b>Aditya Verma</b></h4>
+                    </div>
+                </div>
+
+                <div class="card" style="width:215px;">
+                    <img src="img/img4.jpg"  style="width:100%;height:315px">
+                    <div class="container">
+                    <h4><b>Hitesh Chaudhary</b></h4>   
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p style="text-align:center;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, nick tu opera in <br>
+                    in soluta repellat sit molestias porro sunt nobis nisi vel reiciendis quod quas quia. <br>
+                    Voluptatum vero fuga nesciunt explicabo doloremque harum recusandae ea consequatur sed qui <br>
+                    architecto accusantium repellat deserunt debitis nulla ipsam ratione, labore hic
+                </p>
+            </div>
+            <hr>
+        </body>
+        </html>
+
+    ||style.css||
+
+            .card {
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+                display:inline-block;
+            }
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+            #card-deck{
+                margin-top:50px;
+                text-align:center;
+            }
