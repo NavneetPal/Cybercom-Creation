@@ -1,0 +1,23 @@
+table,th,td{
+    border:1px solid black;
+    border-collapse: collapse;
+}
+thead{
+    background-color: #c6ebc9;
+}
+.blue{
+    background-color:#bee5d3;
+}
+.pink {
+background-color:#f1aa9b;
+}
+.yellow {
+background-color:#f8dc81;
+}
+.container{
+    display:flex;
+    justify-content:center;
+}
+tr td:nth-child(1){
+    font-weight: bold;
+}
