@@ -1,0 +1,12 @@
+table,th,td{
+    border:1px solid black;
+}
+img{
+    width:100px;
+    height:120px;
+    padding:10px;
+}
+.container{
+    display:flex;
+    justify-content:center;
+}
