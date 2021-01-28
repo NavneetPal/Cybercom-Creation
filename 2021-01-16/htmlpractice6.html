@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML PRACTICE 6</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <section>
+            <div id="contact">
+                <h1>CONTACT US</h1>
+            </div>
+            <div id="form-input">
+                <form action="">
+                    <div>
+                        <input type="text" placeholder="&#xf007 &nbsp;&nbsp;Full Name" style="font-family:Arial, FontAwesome">
+                    </div>
+                    <div>
+                        <input type="email" name="" id="" placeholder="&#xf0e0 &nbsp;&nbsp;example@gmail.com" style="font-family:Arial, FontAwesome">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="&#xf10b &nbsp;&nbsp;Eg. +1800 000000" style="font-family:Arial, FontAwesome">
+                    </div>
+                    <div>
+                        <textarea name="" id="" cols="30" rows="5" placeholder="&#xf075 &nbsp;&nbsp; Your comments" style="font-family:Arial, FontAwesome"></textarea>
+                    </div>
+                    <div >
+                        <button id="btn" type="submit">SEND NOW</button>
+                    </div>
+                </form>
+        </div>
+    </section>
+    
+    <script>
+        let btn=document.querySelector('#btn');
+        btn.addEventListener("click",function(){
+            alert("Your request has been submitted !");
+        })
+    </script>
+</body>
+</html>

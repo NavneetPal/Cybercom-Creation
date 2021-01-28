@@ -1,0 +1,30 @@
+section{
+    width:400px;
+    text-align: center;
+    margin:0 auto;
+}
+#contact{
+    background-image: url(contact.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    padding:8px 13px;
+    color:white;
+    margin-bottom:25px;
+}
+
+#form-input input,textarea{
+    width:300px;
+    margin:5px;
+    padding:8px;
+}
+
+
+
+#btn{
+    background-color:#8D3DAF;
+    color:white;
+    padding:8px 20px;
+    border:none;
+    border-radius:50px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
