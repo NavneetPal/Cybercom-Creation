@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Practice 7</title>
+    <link rel="stylesheet" href="htmlpractice7.css">
+</head>
+<body>
+    <form action="sucess.html">
+        <fieldset>
+            <legend>Your Address</legend>
+            <div>
+                <label for="firstName">FirstName</label>
+                <input type="text" name="firstName" id="firstName">
+            </div>
+            <div>
+                <label for="lastName">LastName</label>
+                <input type="text" name="lastName" id="lastName">
+            </div>
+           <div>
+                <label for="street">Street</label>
+                <input type="text" name="street" id="street">
+           </div>
+            <div>
+                <label for="city">City</label>
+                <input type="text" name="city" id="city">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Additional details</legend>
+            <div>
+                <label for="biography">Biography</label>
+                <textarea name="biography" id="biography" cols="30" rows="3"></textarea>
+            </div>
+           <div>
+                <label for="image">Image</label>
+                <input type="file" name="image" id="image">
+           </div>
+           <div>
+                <label for="ageGroup">Age Group</label>
+                <select name="ageGroup" id="ageGroup">
+                <option value="0 to 9 Years" selected>0 to 9 Years</option>
+                <option value="10 to 18 Years" selected>10 to 18 Years</option>
+                <option value="19 to 28 Years" selected>19 to 28 Years</option>
+                <option value="29 to 35 Years" selected>29 to 35 Years</option>
+                <option value="36 to 45 Years" selected>36 to 45 Years</option>
+                </select>
+           </div>
+        </fieldset>
+        <fieldset>
+            <legend>Interests</legend>
+            <div>
+                <label for="hobbies">Hobbies</label>
+                <textarea name="" id="" cols="20" rows="2"></textarea>
+            </div>
+            <div>
+                <label for="favouriteCar">Favourite Car?</label>
+                <select name="car" id="favouriteCar">
+                    <option value="swift">Swift</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div>
+                <label for="transport">Favourite public transport?</label>
+                <textarea name="transport" id="transport" cols="20" rows="2"></textarea>
+            </div>
+        </fieldset>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

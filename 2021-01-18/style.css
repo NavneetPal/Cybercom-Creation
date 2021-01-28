@@ -1,0 +1,21 @@
+body{
+    width:800px;
+    margin:0 auto;
+}
+
+div{
+    margin:5px;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 200px;
+    text-align: left;
+    margin-right: 30px;
+}
+input,select,textarea {
+  display: inline-block;
+  float: left;
+}
