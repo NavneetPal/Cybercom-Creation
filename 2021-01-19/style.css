@@ -1,0 +1,28 @@
+section{
+    background-color:#f2f2f2;
+    width:420px;
+    padding:10px 20px 50px;
+    border:2px solid #ccc;
+    margin:0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],select
+{
+    border:1px solid #ccc;
+}
+
+div{
+    margin:8px;
+}
+
+label{
+    display: inline-block;
+    width: 150px;
+    text-align:right;
+}
+
+.text_input_style {margin-bottom:0;}
+.help_text_style {margin-top:0;clear:both;}
