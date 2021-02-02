@@ -20,7 +20,7 @@ exports.requestHandler=(req,res)=>{
         });
        return req.on('end',()=>{
             const parseBody=Buffer.concat(body).toString();
-            const message=parseBody.split('=')[0];
+            const message=parseBody.split('=')[1];
             fs.writeFile('new.txt',message,(err)=>{
                 res.statusCode=302;
                 res.setHeader('Location','/');
@@ -28,6 +28,7 @@ exports.requestHandler=(req,res)=>{
             }); 
         });
     }
+    
     res.setHeader('Content-Type','text/html');
     res.write('<html>');
     res.write('<head><title>Navneet Pal</title></head>');
