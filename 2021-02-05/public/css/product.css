@@ -1,0 +1,79 @@
+body{
+    margin:0;
+}
+header{
+    background-color:#131212c2;
+    height: 70px;
+    text-align:center;
+    font-size:2em;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: 'Lobster', cursive;
+    
+}
+nav a{
+    text-decoration:none;
+    margin-right:50px;
+    color:white;
+}
+
+a:hover,
+a:active,
+a.active{
+    color:#f5f538e5;
+}
+main{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:40vh;
+    font-family: 'Roboto', sans-serif;
+}
+section{
+    width:300px;
+    text-align:center;
+    font-size:20px;
+    padding-bottom:30px;
+    padding-top:0;
+    margin-top:100px;
+    border:1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+section div{
+    margin:10px;
+}
+section input{
+    border:1px solid #ccc;
+    height: 25px;;
+    border-radius:5px;
+    
+}
+section button{
+    padding:8px 15px;
+    border-radius: 50px;
+    border:none;
+    background-color: #259b9bc7;
+    color:white;
+    font-size:16px;
+    margin-top:15px;
+    transition:all 0.4ms ease-in-out;
+}
+section button:hover{
+    background-color:#146969c7;
+}
+
+.img-banner{
+    background-image: url(/img/product.jpg);
+    background-size:cover;
+    margin:0;
+    padding:30px 0px;
+    margin-bottom:30px;
+}
+h1{
+    margin:0;
+    color:white;
+    font-family: 'Lobster', cursive;
+    font-size:2em;
+    letter-spacing:3px;
+}

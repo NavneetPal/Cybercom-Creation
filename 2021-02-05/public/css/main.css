@@ -1,0 +1,28 @@
+body{
+    margin:0;
+    font-family: 'Lobster', cursive;
+}
+header{
+    background-color:#131212c2;
+    height: 70px;
+    text-align:center;
+    font-size:2em;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+a{
+    text-decoration:none;
+    margin-right:50px;
+    color:white;
+    transition:all 0.4ms ease-in-out;
+}
+a:hover,
+a:active,
+a.active{
+    color:#f5f538e5;
+}
+main{
+    padding:1rem;
+    font-family: 'Roboto', sans-serif;
+}
