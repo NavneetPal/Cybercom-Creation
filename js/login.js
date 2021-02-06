@@ -1,5 +1,11 @@
 const loginForm=document.querySelector('#loginForm');
 
+
+const users=[];
+let user_serialized=JSON.stringify(users);
+localStorage.setItem("users",user_serialized);
+
+
 loginForm.addEventListener('submit',function(e){
     e.preventDefault();
     const email=loginForm.elements.email.value;
