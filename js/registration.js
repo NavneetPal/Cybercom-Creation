@@ -1,6 +1,13 @@
 const adminForm=document.querySelector('#adminForm');
 const registerBtn=document.querySelector('#registerBtn');
 
+
+
+const users=[];
+let user_serialized=JSON.stringify(users);
+localStorage.setItem("users",user_serialized);
+
+
 adminForm.addEventListener('submit',function(e){
     e.preventDefault();
     const name=adminForm.elements.name.value;

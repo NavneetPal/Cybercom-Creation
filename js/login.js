@@ -1,9 +1,7 @@
 const loginForm=document.querySelector('#loginForm');
 
+const user_deserialized=JSON.parse(localStorage.getItem('users'));
 
-const users=[];
-let user_serialized=JSON.stringify(users);
-localStorage.setItem("users",user_serialized);
 
 
 loginForm.addEventListener('submit',function(e){
@@ -15,4 +13,14 @@ loginForm.addEventListener('submit',function(e){
     if(email===admin_deserialized.email && password==admin_deserialized.password){
         window.location = "dashboard.html"
     }
+
+    for(let i=0;i<user_deserialized.length;i++){
+        if(user_deserialized[i].email===email && user_deserialized[i].password===password){
+            let subUser=user_deserialized[i];
+            let subUser_serialized=JSON.stringify(subUser);
+            localStorage.setItem('subUser',subUser_serialized);
+            window.location="sub-user.html";
+        }
+    }
+
 })
