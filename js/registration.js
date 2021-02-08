@@ -3,10 +3,10 @@ const registerBtn=document.querySelector('#registerBtn');
 
 
 
-const users=[];
-let user_serialized=JSON.stringify(users);
-localStorage.setItem("users",user_serialized);
 
+/* when form is submiited we are getting the details of admin and 
+we are storing it in the local storage and if admin is already stored in local storage
+then display the error */
 
 adminForm.addEventListener('submit',function(e){
     e.preventDefault();

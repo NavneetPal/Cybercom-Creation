@@ -41,12 +41,12 @@ header div ul li a{
     height:25px;
 }
 
-#right{
+.right{
     display:flex;
     justify-content:flex-end;
     margin-top:20px;
 }
-#right button{
+.right button{
     padding:5px 40px;
     background-color:#ce8d16dc;
 }
