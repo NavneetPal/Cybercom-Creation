@@ -123,7 +123,7 @@ const User = sequelize.define("user", {
 
 //Synnc Model
 (async()=>{
-  await User.sync();
+    await sequelize.sync();
 })(); 
 
 
