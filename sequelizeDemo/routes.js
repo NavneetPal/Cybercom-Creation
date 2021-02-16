@@ -54,6 +54,73 @@ const User = sequelize.define("user", {
       timestamps:false 
   }); 
 
+
+  const Employee = sequelize.define("employee", {
+    id:{
+        type:DataTypes.INTEGER,
+        allowNull:false,
+        autoIncrement:true,
+        primaryKey:true
+    },
+    firstname:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    lastname:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    email:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    contact_number:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    alternate_contact_number:{
+        type:DataTypes.STRING
+    },
+    designation:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    years_of_experience:{
+        type:DataTypes.INTEGER,
+        allowNull:false
+    },
+    joining_date:{
+        type:DataTypes.DATEONLY,
+        allowNull:false
+    },
+    current_address:{
+        type:DataTypes.STRING,
+    },
+    city:{
+        type:DataTypes.STRING,
+    },
+    state:{
+        type:DataTypes.STRING,
+    },
+    pincode:{
+        type:DataTypes.INTEGER,
+    },
+    pan_number:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    adhar_number:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    passport_number:{
+        type:DataTypes.STRING
+    }
+  },{
+      modelName:'Employee',
+      timestamps:false 
+  }); 
+
 //Synnc Model
 (async()=>{
   await User.sync();
@@ -256,6 +323,40 @@ router.delete('/user-delete-raw/:id',(req,res)=>{
         console.log(err);
     })
 })
+
+
+//to add an employee to the database
+router.post('/employee',(req,res)=>{
+    const{firstname,lastname,email,contact_number,designation,years_of_experience,joining_date,pan_number,adhar_number}=req.body;
+    
+    console.log("helloo hello"+firstname);
+
+    if(firstname.trim() && lastname.trim() && email.trim() && contact_number.trim() && designation.trim() && years_of_experience.trim() && joining_date.trim() && pan_number.trim() && adhar_number.trim()){
+        Employee.create(req.body)
+        .then(()=>{
+            console.log("Employee created successfully");
+            res.status(200).json({
+                status:1,
+                message:"Employee Created successfully"
+            })
+        })
+        .catch(err=>{
+            console.log("Employees is unable to be created");
+            res.status(500).json({
+                status:1,
+                message:"Unable to create employee",
+                data:err
+            })
+        })
+    }
+    else{
+        res.json({
+            status:0,
+            message:"Please fill out the required field"
+        })
+    }
+})
+
 
 //Homepage
 router.get('/',(req,res)=>{
