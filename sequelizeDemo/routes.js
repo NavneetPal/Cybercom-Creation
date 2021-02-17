@@ -118,12 +118,15 @@ const User = sequelize.define("user", {
     }
   },{
       modelName:'Employee',
-      timestamps:false 
+      paranoid:true,
+
+      //giving a custom name of deletedAt to destroyTime
+      deletedAt:'destroyTime'
   }); 
 
 //Synnc Model
 (async()=>{
-    await sequelize.sync();
+    await sequelize.sync({alter:true});
 })(); 
 
 
@@ -355,6 +358,54 @@ router.post('/employee',(req,res)=>{
             message:"Please fill out the required field"
         })
     }
+})
+
+//to delete an employee from the database
+router.delete('/employee/:id',(req,res)=>{
+    const{id}=req.params;
+
+    Employee.destroy({
+        where:{
+            id:id
+        }
+    })
+    .then(()=>{
+        res.status(200).json({
+            status:1,
+            message:`Employee with id:${id} deleted sucessfully`
+        })
+    })
+    .catch(err=>{
+        res.status(500).json({
+            status:0,
+            message:"Unable to delete Employee",
+            data:err
+        })
+    })
+})
+
+//to restore an employee into the database
+router.post('/employee-restore',(req,res)=>{
+    const{id}=req.body;
+
+    Employee.restore({
+        where:{
+            id:id
+        }
+    })
+    .then(()=>{
+        res.status(200).json({
+            status:1,
+            message:`Employee with id:${id} restored sucessfully`
+        })
+    })
+    .catch(err=>{
+        res.status(500).json({
+            status:0,
+            message:"Unable to restore Employee",
+            data:err
+        })
+    })
 })
 
 
