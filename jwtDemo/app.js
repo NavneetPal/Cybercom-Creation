@@ -5,7 +5,8 @@ const JWT=require('jsonwebtoken');
 const bcrypt=require('bcrypt');
 const app=express();
 const JwtConfig=require('./config/jwt-config');
-
+const jwtConfig = require('./config/jwt-config');
+const {checkToken}=require('./config/jwt-middleware');
 
 app.use(bodyParser.json());
 
@@ -55,6 +56,49 @@ const User=sequelize.define("user",{
 //Sync all the models
 sequelize.sync({alter:true});
 
+
+
+
+//User profile data
+app.post("/profile",checkToken,(req,res)=>{
+    res.status(200).json({
+        status:1,
+        userdata:req.user,
+        message:"Token value parsed"
+    })
+})
+
+
+//Validate token api
+app.post('/validate',(req,res)=>{
+   // console.log(req.headers);
+   let userToken=req.headers.authorization;
+
+   if(userToken){
+    //we have userToken
+    JWT.verify(userToken,jwtConfig.secret,(err,decoded)=>{
+        if(err){
+            res.status(500).json({
+                status:0,
+                message:"Token is invalid",
+                data:err
+            })
+        }else{
+            res.status(200).json({
+                status:1,
+                message:"Token is valid",
+                data:decoded
+            })
+        }
+    })
+   }else{
+    //not getting token value
+    res.status(500).json({
+        status:0,
+        message:"Please provide authentication token value"
+    })
+   }
+})
 
 //register user api
 app.post('/user',(req,res)=>{
@@ -115,7 +159,7 @@ app.post('/login',(req,res)=>{
             //we have user data
             if(bcrypt.compareSync(password,user.password)){
                 
-                let userToken=JWT.sign({
+                let userToken=JWT.sign({ 
                     email:user.email,
                     id:user.id
                 },JwtConfig.secret,{
